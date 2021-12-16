@@ -1,12 +1,4 @@
-
-// TODO 1: show alert in red from json api here, hide all other whispers
-    // TODO 2: one whisper at a Time, write API code in backend.ts and pass valuses from each whisper and display same Compnonet
-    // TODO 3: second whisper is window recognitions
-    // TODO 4: for clinical trials - show results from CT api and then show it from CT ML model
-    // TODO 5: first section help: make it more user friends which displays how process works and links to github repo doc0umentation
-    // TODO 6: better documentation, better sales chances, also improve metadata documentation
-    
-# SCM_Rx_Inventory_OLIVEAI
+# SCM_Rx_Inventory_OLIVEai_loop
 Olive Loop to manage Supply Chain Rx Inventory system using Predictive Analytics AI
 
 #### Author: Amit Shukla
