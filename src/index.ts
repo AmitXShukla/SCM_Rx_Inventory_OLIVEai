@@ -15,8 +15,8 @@ import {
   clipboardListener.listen(); // loop is listening to ITEM/PO/DocCART key values
   // filesystemExample.run(); // not using for now, plan to use to address vendor/Item receiving files functionalities only
   // keyboardListener.listen(); // loop is listening to ITEM/PO/DocCART key values
-  networkExample.run(); // SCM Rx IN AI Loop
   // searchListener.listen(); // loop is listening to ITEM/PO/DocCART key values
   // openHandler.start(); // not using
   new IntroWhisper().show(); // use this to display startup messages, // perhaps also show ERP system Alerts
+  networkExample.run(); // SCM Rx IN AI Loop|
 })();

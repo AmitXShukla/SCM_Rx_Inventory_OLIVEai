@@ -1,5 +1,9 @@
 import { whisper } from '@oliveai/ldk';
 import { stripIndent } from 'common-tags';
+import { getOverlappingDaysInIntervals } from 'date-fns';
+import { networkExample } from '../aptitudes';
+import { network } from '@oliveai/ldk';
+import { NetworkWhisper } from '../whispers';
 
 interface Props {
   newMessage: string;
@@ -8,10 +12,22 @@ interface Props {
 }
 export default class IntroWhisper {
   whisper: whisper.Whisper;
-
   label: string;
-
   props: Props;
+
+  async getData(str) {
+    const request: network.HTTPRequest = {
+      method: 'GET',
+      url: `https://raw.githubusercontent.com/AmitXShukla/SCM_Rx_Inventory_OLIVEai/main/assets/json/alerts.json`,
+    };
+    const response = await network.httpRequest(request);
+    const decodedBody = await network.decode(response.body);
+    const parsedObject = JSON.parse(decodedBody);
+    const recalls = parsedObject.results;
+
+    const whisper = new NetworkWhisper(recalls);
+    whisper.show();
+  }
 
   constructor() {
     this.whisper = undefined;
@@ -40,12 +56,12 @@ export default class IntroWhisper {
       type: whisper.WhisperComponentType.Markdown,
       body: stripIndent`
       # Startup instructions
-      Step 0: Review ALERTs section below for latest system messages.
+      Step 0: Review ALERTs section above for latest system messages.
 
       Step 1: login to Healthcare OLTP / ERP Application, Olive_SCM_Rx_AI is expecting you to use a chrome window.
 
       Step 2: enter some data in app | search text in Olive Help | select & copy text to your clipboard
-        for example, PO12345 | VNDR12345 | ITEM12345 (use these strings for **demo)
+        for example, PO12345 | MSR12345 | ITEM12345 | RECV12345 (use these strings for **demo)
 
       Step 3: AI is smart to parse your text as PO | ITEM | others, perform an elastic search in database and render active matching results.
       `,
@@ -56,11 +72,11 @@ export default class IntroWhisper {
       open: true,
     };
 
-    const alertMessage: whisper.Message = {
-      type: whisper.WhisperComponentType.Message,
-      body: 'ALERT: DocCART Surgical items at par location Oakland are low in inventory, Auto Replenishment POs must dispatch to avoid deficit.',
-      style: whisper.Urgency.Error,
-    };
+    // const alertMessage: whisper.Message = {
+    //   type: whisper.WhisperComponentType.Message,
+    //   body: 'ALERT: DocCART Surgical items at par location Oakland are low in inventory, Auto Replenishment POs must dispatch to avoid deficit.',
+    //   style: whisper.Urgency.Error,
+    // };
     // // Box example.
     // const boxHeader: whisper.Markdown = {
     //   type: whisper.WhisperComponentType.Markdown,
@@ -180,10 +196,10 @@ export default class IntroWhisper {
     // };
 
     // Showing how to use whisper.update
-    const updatableComponentsHeading: whisper.Markdown = {
-      type: whisper.WhisperComponentType.Markdown,
-      body: 'search here',
-    };
+    // const updatableComponentsHeading: whisper.Markdown = {
+    //   type: whisper.WhisperComponentType.Markdown,
+    //   body: 'search here',
+    // };
     const updatableMessage: whisper.Message = {
       type: whisper.WhisperComponentType.Message,
       header: 'find ....',
@@ -198,14 +214,14 @@ export default class IntroWhisper {
         this.update({ newMessage: val });
       },
     };
-    const updatableLabelInput: whisper.TextInput = {
-      type: whisper.WhisperComponentType.TextInput,
-      label: 'Change Whisper Label',
-      onChange: (_error: Error | undefined, val: string) => {
-        console.log('Updating whisper label: ', val);
-        this.update({ label: val });
-      },
-    };
+    // const updatableLabelInput: whisper.TextInput = {
+    //   type: whisper.WhisperComponentType.TextInput,
+    //   label: 'Change Whisper Label',
+    //   onChange: (_error: Error | undefined, val: string) => {
+    //     console.log('Updating whisper label: ', val);
+    //     this.update({ label: val });
+    //   },
+    // };
     // const resetButton: whisper.Button = {
     //   type: whisper.WhisperComponentType.Button,
     //   label: 'Reset Clones',
@@ -217,6 +233,21 @@ export default class IntroWhisper {
     //     this.update({ numClones });
     //   },
     // };
+    const searchButton: whisper.Button = {
+      type: whisper.WhisperComponentType.Button,
+      label: 'Search',
+      size: whisper.ButtonSize.Large,
+      buttonStyle: whisper.ButtonStyle.Secondary,
+      onClick: () => {
+        // networkExample.run();
+        console.log("about to call get data")
+        console.log(this.props.newMessage)
+        this.getData(this.props.newMessage);
+        // const numClones = 1;
+        // console.log('Resetting number of clones: ', numClones);
+        // this.update({ numClones });
+      },
+    };
     // const clonedComponents: whisper.ChildComponents[] = [];
     // for (let i = this.props.numClones; i > 0; i -= 1) {
     //   const clone: whisper.Button = {
@@ -235,8 +266,8 @@ export default class IntroWhisper {
       introMessage,
       divider,
       collapseBox,
-      divider,
-      alertMessage,
+      // divider,
+      // alertMessage,
       // boxHeader,
       // box,
       // divider,
@@ -253,11 +284,12 @@ export default class IntroWhisper {
       // select,
       // radioBtn,
       divider,
-      updatableComponentsHeading,
+      // updatableComponentsHeading,
       updatableMessage,
       updatableMessageInput,
-      updatableLabelInput,
+      // updatableLabelInput,
       // resetButton,
+      searchButton
       // ...clonedComponents,
     ];
   }

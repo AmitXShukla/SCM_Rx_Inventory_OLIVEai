@@ -14,14 +14,26 @@
         {
             "entity": "NCAL",
             "city": "Oakland",
-            "status": "critical",
+            "status": "red",
             "message": "ALERT: DocCART Surgical items at par location Oakland are low in inventory, Auto Replenishment POs must dispatch to avoid deficit."
         },
         {
             "entity": "NCAL",
             "city": "SanFrancisco",
-            "status": "warning",
+            "status": "yellow",
             "message": "ALERT: At par OTC items are received in open package, initiate return to vendor."
+        },
+        {
+            "entity": "SCAL",
+            "city": "Irvine",
+            "status": "orange",
+            "message": "ALERT: Purchase order # PO345k Qty/Price anomaly detected."
+        },
+        {
+            "entity": "NW",
+            "city": "Seattle",
+            "status": "green",
+            "message": "ALERT: none"
         }
     ]
 }

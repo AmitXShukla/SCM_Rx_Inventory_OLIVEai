@@ -74,6 +74,9 @@
         "urlDomains": [
           {
             "value": "*.fda.gov"
+          },
+          {
+            "value": "raw.githubusercontent.com"
           }
         ]
       },
