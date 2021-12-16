@@ -1,22 +1,22 @@
 import { IntroWhisper } from './whispers';
 import {
   clipboardListener,
-  filesystemExample,
+  // filesystemExample,
   keyboardListener,
   networkExample,
   searchListener,
-  activeWindowListener,
-  openHandler,
+  // activeWindowListener,
+  // openHandler,
 } from './aptitudes';
 
 (async function main(): Promise<void> {
-  console.log('Example Loop Started');
-  clipboardListener.listen();
-  filesystemExample.run();
-  keyboardListener.listen();
-  networkExample.run();
-  searchListener.listen();
-  activeWindowListener.listen();
-  openHandler.start();
-  new IntroWhisper().show();
+  console.log('SCM Rx IN AI Loop Started');
+  // TODO: activeWindowListener.listen(); // start here, Loop only listen to ERP App window, chrome://localhost in this case
+  clipboardListener.listen(); // loop is listening to ITEM/PO/DocCART key values
+  // filesystemExample.run(); // not using for now, plan to use to address vendor/Item receiving files functionalities only
+  // keyboardListener.listen(); // loop is listening to ITEM/PO/DocCART key values
+  networkExample.run(); // SCM Rx IN AI Loop
+  // searchListener.listen(); // loop is listening to ITEM/PO/DocCART key values
+  // openHandler.start(); // not using
+  new IntroWhisper().show(); // use this to display startup messages, // perhaps also show ERP system Alerts
 })();

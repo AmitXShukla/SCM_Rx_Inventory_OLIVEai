@@ -1,7 +1,7 @@
 {
-  "name": "scm_rx_inventory_ai",
+  "name": "scm_rx_inventory_oliveai",
   "version": "0.0.1",
-  "description": "",
+  "description": "Olive Loop to manage Supply Chain Rx Inventory system using Predictive Analytics AI",
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack --entry ./src/index.ts --config ./node_modules/@oliveai/ldk/dist/webpack/config.js",
@@ -10,8 +10,8 @@
     "lint": "eslint ./ --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Amit Shukla",
+  "license": "MIT",
   "devDependencies": {
     "@types/common-tags": "^1.8.1",
     "@types/jest": "^27.0.2",
@@ -78,7 +78,7 @@
         ]
       },
       "window": {},
-      "ui": {},      
+      "ui": {},
       "whisper": {}
     }
   }
