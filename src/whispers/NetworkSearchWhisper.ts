@@ -24,24 +24,44 @@ export default class NetworkSearchWhisper {
     this.props.recalls.forEach((recall) => {
       components.push({
         type: whisper.WhisperComponentType.Link,
-        text: `${recall.entity}- ${recall.transactionType} (${recall.itemID})`,
+        text: `ENTITY: ${recall.entity}- ${recall.transactionType} (${recall.itemID})`,
         onClick: () => {
           const markdown = stripIndent`
-          # About this results
+          ## Item Details
           transactionType: ${recall.transactionType}
+
           UNSPSC: ${recall.UNSPSC}
+
           entity: ${recall.entity}
+
           category: ${recall.category}
+
           resultType: ${recall.resultType}
+
           preferredItem: ${recall.preferredItem}
+
           preferredVendor: ${recall.preferredVendor}
+
           onContract: ${recall.onContract}
+
           description: ${recall.description}
+
           message: ${recall.message}
 
           # AI ALERTS
           ## Anomaly Detection
           price: ${recall.alert["anomalyDetection"].price}
+
+          receivingTime: ${recall.alert["anomalyDetection"].receivingTime}
+
+          qtyOrdered: ${recall.alert["anomalyDetection"].qtyOrdered}
+
+          qtyOnHand: ${recall.alert["anomalyDetection"].qtyOnHand}
+
+          matchExceptionRaised: ${recall.alert["anomalyDetection"].matchExceptionRaised}
+
+          ## Purchase Recommendation
+          ${recall.alert["purchaseRecommendation"]}
           `;
 
           whisper.create({

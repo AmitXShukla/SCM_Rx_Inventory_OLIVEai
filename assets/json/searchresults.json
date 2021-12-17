@@ -33,6 +33,121 @@
                 },
                 "purchaseRecommendation": "BOUGHT TOGETHER: pens, writing pads, ink refills"
             }
+        },
+        {
+            "transactionType": "PO",
+            "itemID": "PO12345",
+            "UNSPSC": "-",
+            "entity": "SCAL",
+            "category": "Office Supply",
+            "resultType": "Procurement",
+            "preferredItem": "N",
+            "preferredVendor": "Elixir",
+            "onContract": "N",
+            "description": "Surgical Items.",
+            "message": "ALERT: none",
+            "alert": {
+                "anomalyDetection": {
+                    "price": "10% above threshold",
+                    "receivingTime": "on-time",
+                    "qtyOrdered": "low",
+                    "qtyOnHand": "normal",
+                    "matchExceptionRaised": "none"
+                },
+                "purchaseRecommendation": "BOUGHT TOGETHER: surgical masks, sanitary pads, bandages"
+            }
+        },
+        {
+            "transactionType": "RECV",
+            "itemID": "RECV12345",
+            "UNSPSC": "-",
+            "entity": "SCAL",
+            "category": "Office Supply",
+            "resultType": "Procurement",
+            "preferredItem": "N",
+            "preferredVendor": "Elixir",
+            "onContract": "N",
+            "description": "Surgical Items.",
+            "message": "ALERT: none",
+            "alert": {
+                "anomalyDetection": {
+                    "price": "10% above threshold",
+                    "receivingTime": "on-time",
+                    "qtyOrdered": "low",
+                    "qtyOnHand": "normal",
+                    "matchExceptionRaised": "none"
+                },
+                "purchaseRecommendation": "BOUGHT TOGETHER: surgical masks, sanitary pads, bandages"
+            }
+        },
+        {
+            "transactionType": "INV",
+            "itemID": "INV12345",
+            "UNSPSC": "-",
+            "entity": "SCAL",
+            "category": "Office Supply",
+            "resultType": "Procurement",
+            "preferredItem": "N",
+            "preferredVendor": "Elixir",
+            "onContract": "N",
+            "description": "Surgical Items.",
+            "message": "ALERT: none",
+            "alert": {
+                "anomalyDetection": {
+                    "price": "10% above threshold",
+                    "receivingTime": "on-time",
+                    "qtyOrdered": "low",
+                    "qtyOnHand": "normal",
+                    "matchExceptionRaised": "none"
+                },
+                "purchaseRecommendation": "BOUGHT TOGETHER: surgical masks, sanitary pads, bandages"
+            }
+        },
+        {
+            "transactionType": "MSR",
+            "itemID": "MSR12345",
+            "UNSPSC": "-",
+            "entity": "NCAL",
+            "category": "Office Supply",
+            "resultType": "Procurement",
+            "preferredItem": "N",
+            "preferredVendor": "Internal transfer",
+            "onContract": "N",
+            "description": "Surgical Items.",
+            "message": "ALERT: none",
+            "alert": {
+                "anomalyDetection": {
+                    "price": "10% above threshold",
+                    "receivingTime": "on-time",
+                    "qtyOrdered": "low",
+                    "qtyOnHand": "normal",
+                    "matchExceptionRaised": "none"
+                },
+                "purchaseRecommendation": "BOUGHT TOGETHER: surgical masks, sanitary pads, bandages"
+            }
+        },
+        {
+            "transactionType": "PAR",
+            "itemID": "PAR12345",
+            "UNSPSC": "-",
+            "entity": "NW",
+            "category": "Office Supply",
+            "resultType": "Procurement",
+            "preferredItem": "N",
+            "preferredVendor": "Internal transfer",
+            "onContract": "N",
+            "description": "Surgical Items.",
+            "message": "ALERT: none",
+            "alert": {
+                "anomalyDetection": {
+                    "price": "10% above threshold",
+                    "receivingTime": "on-time",
+                    "qtyOrdered": "low",
+                    "qtyOnHand": "normal",
+                    "matchExceptionRaised": "none"
+                },
+                "purchaseRecommendation": "BOUGHT TOGETHER: surgical masks, sanitary pads, bandages"
+            }
         }
     ]
 }

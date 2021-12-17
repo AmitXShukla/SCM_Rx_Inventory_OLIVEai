@@ -3,7 +3,7 @@ import { stripIndent } from 'common-tags';
 import { getOverlappingDaysInIntervals } from 'date-fns';
 import { networkExample } from '../aptitudes';
 import { network } from '@oliveai/ldk';
-import { NetworkSearchWhisper } from '../whispers';
+import NetworkSearchWhisper from '../whispers/NetworkSearchWhisper';
 
 interface Props {
   newMessage: string;
