@@ -48,7 +48,7 @@ export default class IntroWhisper {
     // Intro message.
     const introMessage: whisper.Message = {
       type: whisper.WhisperComponentType.Message,
-      body: 'REST API is using a demo database. Please do not use it for any live reporting purpose. contact us at info@elishconsulting.com to setup your own API',
+      body: 'REST API is using a demo database. Please do not use it for any live reporting purpose. refer to https://github.com/AmitXShukla/SCM_Rx_Inventory_OLIVEai for documentation.',
       style: whisper.Urgency.Success,
     };
 
@@ -59,12 +59,14 @@ export default class IntroWhisper {
       # Startup instructions
       Step 0: Review ALERTs section above for latest system messages.
 
-      Step 1: login to Healthcare OLTP / ERP Application, Olive_SCM_Rx_AI is expecting you to use a chrome window.
+      Step 1: login to Healthcare OLTP / ERP Application, Olive_SCM_Rx_AI is expecting you to use a your ERP app.
 
       Step 2: enter some data in app | search text in Olive Help | select & copy text to your clipboard
         for example, PO12345 | MSR12345 | ITEM12345 | RECV12345 (use these strings for **demo)
 
-      Step 3: AI is smart to parse your text as PO | ITEM | others, perform an elastic search in database and render active matching results.
+      Step 3: AI API is smart to parse your text as PO | ITEM | others, perform an elastic search in database and render active matching results.
+
+      Step 4: Review two sections in search results, Section 1: About/Details about searched items | Section 2: AI Alerts based on pre-trained ML Models.
       `,
     };
     const collapseBox: whisper.CollapseBox = {
