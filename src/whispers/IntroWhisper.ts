@@ -3,7 +3,7 @@ import { stripIndent } from 'common-tags';
 import { getOverlappingDaysInIntervals } from 'date-fns';
 import { networkExample } from '../aptitudes';
 import { network } from '@oliveai/ldk';
-import { NetworkWhisper } from '../whispers';
+import { NetworkSearchWhisper } from '../whispers';
 
 interface Props {
   newMessage: string;
@@ -18,14 +18,15 @@ export default class IntroWhisper {
   async getData(str) {
     const request: network.HTTPRequest = {
       method: 'GET',
-      url: `https://raw.githubusercontent.com/AmitXShukla/SCM_Rx_Inventory_OLIVEai/main/assets/json/alerts.json`,
+      url: `https://raw.githubusercontent.com/AmitXShukla/SCM_Rx_Inventory_OLIVEai/main/assets/json/searchresults.json`,
     };
     const response = await network.httpRequest(request);
     const decodedBody = await network.decode(response.body);
     const parsedObject = JSON.parse(decodedBody);
     const recalls = parsedObject.results;
-
-    const whisper = new NetworkWhisper(recalls);
+    console.log("Print results")
+    console.log(JSON.stringify(recalls))
+    const whisper = new NetworkSearchWhisper(recalls);
     whisper.show();
   }
 
@@ -239,9 +240,6 @@ export default class IntroWhisper {
       size: whisper.ButtonSize.Large,
       buttonStyle: whisper.ButtonStyle.Secondary,
       onClick: () => {
-        // networkExample.run();
-        console.log("about to call get data")
-        console.log(this.props.newMessage)
         this.getData(this.props.newMessage);
         // const numClones = 1;
         // console.log('Resetting number of clones: ', numClones);

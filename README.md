@@ -9,7 +9,9 @@ Managing supply chain (Procure 2 Pay operations) is always a challenging tasks f
 
 Business user must have complete visibility and require operation intelligence information readily available to make quick, effective and informed decisions.
 
-SCM Rx Inventory AI Olive LOOP solves this problem. It acts as an AI assistant to help user make quick informed decision. As user input, search for Items, Purchase orders, DocCART or other SCM related information, Olive Loop connects to a REST API, which render live data & predictive analytics based on pre-trained AI models, historical transactions stored in system.
+SCM Rx Inventory AI Olive LOOP solves this problem. 
+
+It acts as an AI assistant to help user make quick informed decision. As user input, search for Items, Purchase orders, DocCART or other SCM related information, Olive Loop connects to a REST API, which render live data & predictive analytics based on pre-trained AI models, historical transactions stored in system.
 
 ---
 ### how does it work
