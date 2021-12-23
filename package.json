@@ -31,7 +31,7 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/runtime": "^7.13.10",
     "@babel/runtime-corejs2": "^7.13.10",
-    "@oliveai/ldk": "*",
+    "@oliveai/ldk": "3.9.0",
     "babel-loader": "^8.2.2",
     "common-tags": "^1.8.0",
     "core-js": "^3.12.1",
@@ -82,9 +82,7 @@
       },
       "window": {},
       "ui": {},
-      "whisper": {
-        "value": "NetworSearchWhisper"
-      }
+      "whisper": {}
     }
   }
 }
