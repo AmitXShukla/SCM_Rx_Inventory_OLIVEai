@@ -5,6 +5,8 @@ Smart Loop to manage live Supply Chain Rx Inventory ERPs using Predictive Analyt
 #### Author: Amit Shukla
 #### Contact: info@elishconsulting.com
 
+## This repo will be replaced by https://github.com/AmitXShukla/Rx-SupplyChain-Analytics-with-PredictiveAI
+
 # Loop Description
 Managing supply chain (Procure 2 Pay operations) is always a challenging tasks for any organization whether small, medium and large. And managing these operations effectively become even more critical for Healthcare providers.
 
